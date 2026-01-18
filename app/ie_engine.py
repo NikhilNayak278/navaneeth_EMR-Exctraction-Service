@@ -190,7 +190,7 @@ PROMPTS = {
     You are an expert clinical AI assistant. Extract structured info from this Medical Report.
     
     Extract the following entities:
-    - **PII**: Patient Name, DOB, Patient ID, Date of Report.
+    - **PII**: Patient Given Name, Patient Family Name, DOB, Patient ID, Date of Report.
     - **Disease_disorder**: Any medical condition, illness, disease, or diagnosis.
     - **Symptoms**: Any symptoms or complaints.
     - **Clinical_finding_names**: Any clinical finding names.
@@ -202,7 +202,7 @@ PROMPTS = {
     Output JSON format:
     {
       "Document_Type": "Medical Report",
-      "PII": {"Name": "...", "DOB": "...", "ID": "...", "Date": "..."},
+      "PII": {"GivenName": "...", "FamilyName": "...", "DOB": "...", "ID": "...", "Date": "..."},
       "Disease_disorder": ["..."],
       "Symptoms": ["..."],
       "Clinical_finding_names": ["..."],
@@ -216,13 +216,13 @@ PROMPTS = {
     You are an expert clinical AI assistant. Extract structured info from this Lab Report.
     
     Extract the following entities:
-    - **PII**: Patient Name, DOB, Patient ID, Date of Report.
+    - **PII**: Patient Given Name, Patient Family Name, DOB, Patient ID, Date of Report.
     - **Lab_Tests**: List of objects with Name, Value, Unit, Reference_Range.
     
     Output JSON format:
     {
       "Document_Type": "Lab Report",
-      "PII": {"Name": "...", "DOB": "...", "ID": "...", "Date": "..."},
+      "PII": {"GivenName": "...", "FamilyName": "...", "DOB": "...", "ID": "...", "Date": "..."},
       "Lab_Tests": [{"Name": "...", "Value": "...", "Unit": "...", "Reference_Range": "..."}]
     }
     """,
@@ -230,7 +230,7 @@ PROMPTS = {
     You are an expert clinical AI assistant. Extract structured info from this Discharge Summary.
     
     Extract the following entities:
-    - **PII**: Patient Name, DOB, Patient ID, Admission Date, Discharge Date.
+    - **PII**: Patient Given Name, Patient Family Name, DOB, Patient ID, Admission Date, Discharge Date.
     - **Diagnosis**: Admission diagnosis and Discharge diagnosis.
     - **Outcome**: Clinical outcome (e.g., Improved, Stable, Deceased).
     - **Instructions**: Discharge instructions and follow-up plan.
@@ -238,7 +238,7 @@ PROMPTS = {
     Output JSON format:
     {
       "Document_Type": "Discharge Summary",
-      "PII": {"Name": "...", "DOB": "...", "ID": "...", "Admission_Date": "...", "Discharge_Date": "..."},
+      "PII": {"GivenName": "...", "FamilyName": "...", "DOB": "...", "ID": "...", "Admission_Date": "...", "Discharge_Date": "..."},
       "Diagnosis": ["..."],
       "Outcome": "...",
       "Instructions": ["..."]
@@ -248,7 +248,7 @@ PROMPTS = {
     You are an expert clinical AI assistant. Extract structured info from this Admission Slip.
     
     Extract the following entities:
-    - **PII**: Patient Name, DOB, Patient ID, Date of Admission.
+    - **PII**: Patient Given Name, Patient Family Name, DOB, Patient ID, Date of Admission.
     - **Admission_Reason**: Reason for admission or Chief Complaint.
     - **Doctor**: Admitting Physician name.
     - **Department**: Medical Department/Ward.
@@ -256,7 +256,7 @@ PROMPTS = {
     Output JSON format:
     {
       "Document_Type": "Admission Slip",
-      "PII": {"Name": "...", "DOB": "...", "ID": "...", "Date": "..."},
+      "PII": {"GivenName": "...", "FamilyName": "...", "DOB": "...", "ID": "...", "Date": "..."},
       "Admission_Reason": "...",
       "Doctor": "...",
       "Department": "..."

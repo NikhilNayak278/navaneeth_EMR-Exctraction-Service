@@ -1,0 +1,27 @@
+{
+    "Document_Type": "Discharge Summary",
+    "PII": {
+        "Name": "Rahul Sharma",
+        "DOB": "N/A",
+        "ID": "PAT-784512",
+        "Admission_Date": "15-Jan-2025",
+        "Discharge_Date": "18-Jan-2025"
+    },
+    "Diagnosis": [
+        "High-grade fever and generalized weakness (Admission Diagnosis)",
+        "Viral Fever (Resolved) (Discharge Diagnosis)"
+    ],
+    "Outcome": "Improved",
+    "Instructions": [
+        "Discharge Medications:",
+        "- Paracetamol 650 mg SOS for 3 days",
+        "- Vitamin B-Complex Once daily 7 days",
+        "Discharge Advice:",
+        "- Take adequate rest",
+        "- Maintain hydration",
+        "- Follow up if fever recurs",
+        "Follow-Up Plan:",
+        "- Follow-up after 7 days",
+        "- With Dr. Ananya Rao"
+    ]
+}

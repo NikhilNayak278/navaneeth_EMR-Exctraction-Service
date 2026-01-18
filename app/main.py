@@ -43,8 +43,11 @@ async def extract_endpoint(file: UploadFile = File(...), use_gemini: bool = Form
         else:
              entities = ie_engine.extract_entities(raw_text)
         
+        # with open("discharge.json", "w") as f:
+        # #     json.dump(entities, f, indent=4)
+        # with open("lab.json", "r") as f:
+        #     entities = json.load(f)
         return entities
-        
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
