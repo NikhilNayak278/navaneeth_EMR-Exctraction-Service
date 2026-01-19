@@ -1,0 +1,53 @@
+{
+    "Document_Type": "Lab Report",
+    "PII": {
+        "Name": "Rahul Sharma",
+        "DOB": null,
+        "ID": "PAT-784512",
+        "Date": "16-Jan-2025"
+    },
+    "Lab_Tests": [
+        {
+            "Name": "Hemoglobin",
+            "Value": "13.8",
+            "Unit": "g/dL",
+            "Reference_Range": "13.0 - 17.0"
+        },
+        {
+            "Name": "Total WBC Count",
+            "Value": "4200",
+            "Unit": "/uL",
+            "Reference_Range": "4000 - 11000"
+        },
+        {
+            "Name": "Platelet Count",
+            "Value": "1.9",
+            "Unit": "lakh /uL",
+            "Reference_Range": "1.5-4.5"
+        },
+        {
+            "Name": "RBC Count",
+            "Value": "4.6",
+            "Unit": "million/L",
+            "Reference_Range": "4.5 - 5.9"
+        },
+        {
+            "Name": "Dengue NS1",
+            "Value": "Negative",
+            "Unit": null,
+            "Reference_Range": "Negative"
+        },
+        {
+            "Name": "Malaria Parasite",
+            "Value": "Negative",
+            "Unit": null,
+            "Reference_Range": "Negative"
+        },
+        {
+            "Name": "CRP",
+            "Value": "4",
+            "Unit": "mg/L",
+            "Reference_Range": "< 6 mg/L"
+        }
+    ]
+}

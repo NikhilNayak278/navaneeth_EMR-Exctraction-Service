@@ -1,0 +1,24 @@
+{
+    "Document_Type": "Medical Report", 
+    "PII": 
+        {
+            "Name": "Mr. Rajesh Kumar", 
+            "DOB": null, 
+            "ID": "P-992384", 
+            "Date": "December 27 , 2025"
+        }, 
+    "Disease_disorder": 
+        ["Grade-I Essential Hypertension"], 
+    "Symptoms": 
+        ["mild persistent headache", "blurred vision"], 
+    "Clinical_finding_names": 
+        ["Blood Pressure", "Heart Rate", "Temperature", "SpO2"], 
+    "Clinical_finding_values": 
+        ["138/88 mmHg", "82 bpm", "98.6 F", "98%"], 
+    "Medication": 
+        ["Amlodipine"], 
+    "Dosage": 
+        ["Smg", "1-0-0", "30 days"], 
+    "Procedure": 
+        ["BP monitoring"]
+}
