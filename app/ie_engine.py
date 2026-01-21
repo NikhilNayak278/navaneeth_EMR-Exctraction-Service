@@ -117,7 +117,10 @@ def extract_with_ollama(text: str, model_name: str = "llama3") -> dict:
         return {"error": str(e)}
 
 # Load environment variables
-load_dotenv()
+from pathlib import Path
+env_path = Path(__file__).resolve().parent.parent / '.env'
+load_dotenv(dotenv_path=env_path)
+print(f"Loading .env from: {env_path}")
 
 # Global pipeline instance
 ner_pipeline = None
@@ -337,4 +340,49 @@ def extract_with_gemini(text: str) -> dict:
     
     except Exception as e:
         print(f"Error during Gemini extraction: {e}")
+        return {"error": str(e)}
+
+def extract_image_with_gemini(image_bytes: bytes) -> dict:
+    """
+    Extracts structured entities directly from an image using Gemini Vision (Handwritten Support).
+    """
+    if not init_gemini():
+        return {"error": "Gemini API key not configured."}
+    
+    try:
+        from PIL import Image
+        import io
+        
+        image = Image.open(io.BytesIO(image_bytes))
+        
+        # We can try to classify first or just use a generic Medical Report prompt for handwriting
+        # For simplicity in handwriting, let's assume it's likely a Report or Discharge Summary.
+        # But we can try detailed extraction prompt directly.
+        
+        model = genai.GenerativeModel('gemini-2.5-flash')
+        
+        # Use a comprehensive prompt for handwriting
+        prompt = PROMPTS["Medical Report"] # Fallback to broad report
+        
+        final_prompt = f"""
+        {prompt}
+        
+        Instructions:
+        The input is an image of a handwritten medical document. 
+        Transcribe and extract the information accurately. 
+        If some text is illegible, make a best guess or omit.
+        """
+        
+        response = model.generate_content([final_prompt, image])
+        content = response.text
+        
+        if "```json" in content:
+            content = content.replace("```json", "").replace("```", "")
+        elif "```" in content:
+             content = content.replace("```", "")
+             
+        return json.loads(content.strip())
+
+    except Exception as e:
+        print(f"Error during Gemini Vision extraction: {e}")
         return {"error": str(e)}
